@@ -1,23 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Modules\User\Http\Controller;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Modules\User\Http\Requests\SessionUserRequest;
 
-class SessionController extends Controller
+class SessionUserController extends Controller
 {
-    public function create()
+    public function getSessionUserView()
     {
         return view('auth.login');
     }
 
-    public function store()
+    public function postSessionUser(SessionUserRequest $request)
     {
-        $attributes = request()->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+        $attributes = $request->validated();
 
         if (!Auth::attempt($attributes)) {
             throw ValidationException::withMessages([
@@ -30,7 +29,7 @@ class SessionController extends Controller
         return redirect('/guilds');
     }
 
-    public function destroy()
+    public function logout()
     {
         Auth::logout();
 
