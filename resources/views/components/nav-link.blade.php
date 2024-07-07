@@ -8,7 +8,7 @@
                 <a href="/login" class="text-white">Login</a>
                 <a href="/register" class="text-white">Register</a>
             @else
-                <x-form.form method="POST" action="/logout">
+                <x-form.form method="GET" action="/logout">
                     <button type="submit" class="text-white">Logout</button>
                 </x-form.form>
             @endguest

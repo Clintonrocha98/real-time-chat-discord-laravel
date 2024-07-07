@@ -1,6 +1,6 @@
-@props(['action', 'channel_id', 'guild_id'])
+@props(['channel_id', 'guild_id', 'user_id'])
 
-<form method='POST' action='{{ $action }}' id='messageForm'>
+<form method='GET' id='messageForm'>
     @csrf
     @method('POST')
     <div class="pb-6 px-4 flex-none">
@@ -15,6 +15,7 @@
             </span>
             <input type="hidden" id="channelId" value='{{ $channel_id }}' />
             <input type="hidden" id="guildId" value='{{ $guild_id }}' />
+            <input type="hidden" id="userId" value='{{ $user_id }}' />
             <input name='content' id="content" type="text" class="w-full px-4 bg-gray-600  outline-none text-white"
                 placeholder="Message" autocomplete="off" />
         </div>
