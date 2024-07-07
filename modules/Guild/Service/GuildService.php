@@ -2,8 +2,6 @@
 
 namespace Modules\Guild\Service;
 
-use Illuminate\Database\Eloquent\Collection;
-use Modules\Guild\Model\Guild;
 use Modules\Guild\Repository\Eloquent\GuildRepository;
 
 
@@ -14,15 +12,15 @@ class GuildService
 
   }
 
-  public function all(): Collection
+  public function all()
   {
     return $this->guildRepository->guilds();
   }
-  public function create(array $data): Guild
+  public function create(array $data)
   {
     return $this->guildRepository->create($data);
   }
-  public function delete(string $guild_id, string $owner_id): void
+  public function delete(string $guild_id, string $owner_id)
   {
     $this->guildRepository->delete($owner_id, $guild_id);
   }

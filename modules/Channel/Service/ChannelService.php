@@ -2,7 +2,6 @@
 
 namespace Modules\Channel\Service;
 
-use Modules\Channel\Model\Channel;
 use Modules\Channel\Repository\Eloquent\ChannelRepository;
 
 class ChannelService
@@ -14,15 +13,15 @@ class ChannelService
   }
 
 
-  public function channels(string $guild_id): array
+  public function channels(string $guild_id)
   {
     return $this->channelRepository->channels($guild_id);
   }
-  public function create(array $data): Channel
+  public function create(array $data)
   {
     return $this->channelRepository->create($data);
   }
-  public function delete(string $channel_id): void
+  public function delete(string $channel_id)
   {
     $this->channelRepository->delete($channel_id);
   }

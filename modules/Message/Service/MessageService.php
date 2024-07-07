@@ -2,7 +2,6 @@
 
 namespace Modules\Message\Service;
 
-use Modules\Message\Model\Message;
 use Modules\Message\Repository\Eloquent\MessageRepository;
 
 class MessageService
@@ -17,7 +16,7 @@ class MessageService
     return $this->messageRepository->messages($channel_id);
   }
 
-  public function create(array $data): Message
+  public function create(array $data)
   {
     $message = $this->messageRepository->create($data);
 
