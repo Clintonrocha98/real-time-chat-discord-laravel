@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace Modules\Message\Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\User\Model\User;
+use Modules\Channel\Model\Channel;
 
 class Message extends Model
 {

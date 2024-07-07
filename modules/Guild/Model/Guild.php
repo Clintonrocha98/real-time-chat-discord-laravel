@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Models;
+namespace Modules\Guild\Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\User\Model\User;
+use Modules\Channel\Model\Channel;
 
 class Guild extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id',
         'name',
         'owner_id',
     ];
