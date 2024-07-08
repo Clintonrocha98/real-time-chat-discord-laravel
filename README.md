@@ -70,27 +70,25 @@ O principal intuito desse projeto foi entender um pouco mais do Laravel e ver ma
       ```bash
       cp .env.example .env
       ```
-    - Em .env, você precisa alterar essas variáveis ​​para produção
+    Em ´.env´, você precisa alterar essas variáveis ​​para produção
 
       ```
       REVERB_APP_ID=
       REVERB_APP_KEY=
       REVERB_APP_SECRET=
       ```
-
-4. **Gere a chave da aplicação**:
-    ```bash
-    php artisan key:generate
-    ```
-
-5. **Execute as migrações e seeders**:
+4. **Execute as migrações e seeders**:
     ```bash
     php artisan migrate
     ```
 
-6. **Inicie o servidor de desenvolvimento**:
+5. **Inicie o servidor de desenvolvimento**:
     ```bash
     php artisan serve
+    ```
+6. **Reverb**:
+    ```bash
+    php artisan reverb:start
     ```
 
 ### Frontend
